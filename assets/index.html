@@ -1,0 +1,115 @@
+<!doctype html>
+<html lang="tr">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Sarılma Kupası</title>
+  <meta name="description" content="Birbirine sarılan iki karakterle süslenen beyaz kupa.">
+  <meta name="theme-color" content="#f9f3eb">
+  <style>
+    :root {
+      background: #f9f3eb;
+      color: #36211d;
+      font: 1rem/1.6 system-ui, sans-serif;
+    }
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .wrap { width: min(70rem, calc(100% - 2.5rem)); margin-inline: auto; }
+    header { border-bottom: 1px solid #ddc9bb; }
+    .bar {
+      min-height: 4.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1rem;
+    }
+    a { color: inherit; text-underline-offset: .24em; }
+    a:focus-visible { outline: 2px solid #773c35; outline-offset: 5px; }
+    .brand { font: 700 1.3rem Georgia, serif; text-decoration: none; }
+    .bar nav { font-size: .9rem; }
+    .hero {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
+      align-items: center;
+      gap: clamp(2rem, 8vw, 7rem);
+      padding-block: clamp(2.5rem, 7vw, 6rem);
+    }
+    h1, h2, p, figure { margin: 0; }
+    h1, h2 { font-family: Georgia, serif; font-weight: 400; }
+    h1 {
+      font-size: clamp(3rem, 8vw, 7.25rem);
+      line-height: .93;
+      letter-spacing: -.06em;
+    }
+    h1 span { display: block; color: #87423a; font-style: italic; }
+    .intro { max-width: 32ch; margin-block: 1.8rem; color: #63463f; }
+    .button {
+      display: inline-block;
+      padding: .75rem 1.15rem;
+      border-radius: 2rem;
+      background: #773c35;
+      color: #fff8f1;
+      font-weight: 650;
+      text-decoration: none;
+    }
+    .button:hover { background: #582a24; }
+    figure {
+      padding: .65rem;
+      border: 1px solid #ddc9bb;
+      border-radius: 1.5rem;
+      background: #fffaf4;
+    }
+    img {
+      display: block;
+      width: 100%;
+      aspect-ratio: 4 / 5;
+      object-fit: cover;
+      object-position: center 57%;
+      border-radius: 1rem;
+    }
+    .details {
+      background: #efdfd3;
+      border-top: 1px solid #ddc9bb;
+      padding-block: clamp(2.5rem, 6vw, 4.5rem);
+    }
+    .details .wrap {
+      display: grid;
+      grid-template-columns: minmax(0, .9fr) minmax(0, 1fr);
+      gap: 1.25rem clamp(2rem, 8vw, 7rem);
+      align-items: start;
+    }
+    h2 { font-size: clamp(2.15rem, 5vw, 3.6rem); line-height: 1.05; }
+    .details p { max-width: 44ch; color: #63463f; }
+    @media (max-width: 44rem) {
+      .hero, .details .wrap { grid-template-columns: 1fr; }
+      img { aspect-ratio: 1; }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="wrap bar">
+      <a class="brand" href="/">Sarılma Kupası</a>
+      <nav aria-label="Ana gezinme"><a href="#detaylar">Kupa hakkında</a></nav>
+    </div>
+  </header>
+  <main>
+    <section class="wrap hero" aria-labelledby="baslik">
+      <div>
+        <h1 id="baslik">Sarılma <span>Kupası</span></h1>
+        <p class="intro">Birbirine sarılan iki karakter, beyaz bir kupa ve kahve molasına eşlik eden küçük bir gülümseme.</p>
+        <a class="button" href="#detaylar">Kupayı keşfet ↓</a>
+      </div>
+      <figure>
+        <img src="/assets/kupa.jpg" alt="Ahşap masa üzerinde, birbirine sarılan iki karakterin çizildiği beyaz kupa">
+      </figure>
+    </section>
+    <section class="details" id="detaylar" aria-labelledby="detay-baslik">
+      <div class="wrap">
+        <h2 id="detay-baslik">Kupaya yakından bak</h2>
+        <p>Biri beyaz, diğeri kahverengi iki karakter kupanın ön yüzünde birbirine sarılıyor. Pembe yanaklar ve yuvarlak çizgiler, sade beyaz yüzeye renk katıyor.</p>
+      </div>
+    </section>
+  </main>
+</body>
+</html>
