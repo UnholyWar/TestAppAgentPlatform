@@ -4,7 +4,6 @@ const { join } = require('node:path');
 
 const port = Number(process.env.PORT ?? 3000);
 const page = readFileSync(join(__dirname, 'assets/index.html'), 'utf8');
-const photo = readFileSync(join(__dirname, 'assets/oyun-gecesi.jpg'));
 
 http.createServer((request, response) => {
   const path = request.url.split('?', 1)[0];
@@ -19,9 +18,6 @@ http.createServer((request, response) => {
   } else if (path === '/') {
     type = 'text/html';
     body = page;
-  } else if (path === '/assets/oyun-gecesi.jpg') {
-    type = 'image/jpeg';
-    body = photo;
   } else if (path === '/health') {
     type = 'application/json';
     body = JSON.stringify({ status: 'ok' });
@@ -29,7 +25,6 @@ http.createServer((request, response) => {
     status = 404;
   }
 
-  const contentType = type.startsWith('image/') ? type : `${type}; charset=utf-8`;
-  response.writeHead(status, { 'Content-Type': contentType });
+  response.writeHead(status, { 'Content-Type': `${type}; charset=utf-8` });
   response.end(request.method === 'HEAD' ? undefined : body);
 }).listen(port, '0.0.0.0');

@@ -1,6 +1,6 @@
 # TestAppAgentPlatform
 
-Node.js ile sunulan tek sayfalık GTA VI esintili oyun gecesi sayfası. `/health` uç noktası HTTP 200 ve `{"status":"ok"}` döndürür.
+Node.js ile sunulan tek sayfalık Gündoğdu Mekanik Tesisat tanıtım sayfası. `/health` uç noktası HTTP 200 ve `{"status":"ok"}` döndürür.
 
 Yerel çalıştırma
 

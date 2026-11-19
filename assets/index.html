@@ -3,107 +3,126 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#191220">
-  <meta name="description" content="GTA VI esintili, bir oyun gecesinden kare.">
-  <title>Vice Gecesi | GTA VI Hayran Sayfası</title>
+  <meta name="description" content="Gündoğdu mekanik tesisat. Isıtma, soğutma, havalandırma ve sıhhi tesisat uygulamaları.">
+  <meta name="theme-color" content="#102725">
+  <title>Gündoğdu | Mekanik Tesisat</title>
   <style>
     :root {
-      color-scheme: dark;
-      background: #191220;
-      color: #fff3eb;
+      color-scheme: light;
+      background: #f4f2e9;
+      color: #142b29;
       font: 1rem/1.55 system-ui, sans-serif;
+      --accent: #e7f477;
     }
     * { box-sizing: border-box; }
-    body { margin: 0; }
-    .wrap { width: min(74rem, calc(100% - 2.5rem)); margin-inline: auto; }
-    a { color: inherit; text-underline-offset: .3em; }
-    a:focus-visible { outline: 2px solid #ffc69b; outline-offset: 5px; }
-    .top { border-bottom: 1px solid #ffffff30; }
+    body, h1, h2, h3, p { margin: 0; }
+    .wrap { width: min(75rem, calc(100% - 3rem)); margin-inline: auto; }
+    a { color: inherit; }
+    a:focus-visible { outline: 2px solid currentColor; outline-offset: 5px; }
+    .dark { background: #102725; color: #f6f4ec; }
+    header { border-bottom: 1px solid #53716a; }
     .bar {
-      min-height: 4.5rem;
+      min-height: 4.75rem;
       display: flex;
-      align-items: center;
       justify-content: space-between;
+      align-items: center;
       gap: 1rem;
     }
-    .brand {
-      color: #ffc69b;
-      font-weight: 850;
-      text-decoration: none;
-      letter-spacing: .09em;
-      text-transform: uppercase;
-    }
+    .brand { font-weight: 800; letter-spacing: -.035em; font-size: 1.3rem; text-decoration: none; }
+    nav a { font-size: .9rem; text-underline-offset: .35em; }
     .hero {
-      background: radial-gradient(ellipse at 14% 12%, #613050, transparent 56%),
-                  linear-gradient(145deg, #281a37, #191220 75%);
-    }
-    .layout {
       display: grid;
-      grid-template-columns: minmax(0, .92fr) minmax(0, 1fr);
+      grid-template-columns: minmax(0, 1.2fr) minmax(0, 1fr);
+      gap: clamp(1.5rem, 6vw, 6rem);
       align-items: center;
-      gap: clamp(1.5rem, 5vw, 5rem);
-      padding-block: clamp(2rem, 6vw, 5rem);
+      padding-block: clamp(2.75rem, 7vw, 6.5rem);
     }
-    h1, h2, p, figure { margin: 0; }
-    .tag { color: #ffc69b; font-size: .85rem; font-weight: 750; letter-spacing: .1em; }
     h1 {
-      margin-block: .75rem 1.3rem;
-      font-size: clamp(3.1rem, 9vw, 8rem);
-      font-weight: 950;
-      letter-spacing: -.085em;
-      line-height: .86;
-      text-transform: uppercase;
+      font-size: clamp(2.7rem, 6.3vw, 6rem);
+      line-height: .98;
+      letter-spacing: -.065em;
     }
-    h1 span { display: block; color: #ff97be; }
-    .intro { max-width: 32ch; color: #ead5e5; }
-    figure {
-      padding: .5rem;
-      border: 1px solid #e896b870;
-      background: #211323;
-      box-shadow: 0 1.5rem 4rem #10091b90;
+    h1 span { display: block; color: var(--accent); }
+    .intro { max-width: 42ch; margin-block: 1.45rem; color: #d2dfd7; }
+    .button {
+      display: inline-block;
+      padding: .75rem 1.1rem;
+      background: var(--accent);
+      color: #102725;
+      border-radius: .35rem;
+      font-weight: 750;
+      text-decoration: none;
     }
-    img {
-      display: block;
-      width: 100%;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
-      object-position: center 52%;
+    .button:hover { background: #f1faa9; }
+    .drawing {
+      position: relative;
+      min-height: 16rem;
+      aspect-ratio: 1.3;
+      overflow: hidden;
+      border: 1px solid #53716a;
+      border-radius: .65rem;
+      background-color: #183733;
+      background-image: linear-gradient(#abcbb218 1px, transparent 1px),
+                        linear-gradient(90deg, #abcbb218 1px, transparent 1px);
+      background-size: 1.35rem 1.35rem;
     }
-    figcaption { padding: .65rem .45rem .25rem; color: #ead5e5; font-size: .85rem; }
-    .story { border-top: 1px solid #ffffff30; padding-block: clamp(2rem, 5vw, 4rem); }
-    h2 { margin-bottom: .6rem; font-size: clamp(1.65rem, 5vw, 3rem); line-height: 1.05; }
-    .story p { max-width: 52ch; color: #ead5e5; }
-    @media (max-width: 43rem) {
-      .layout { grid-template-columns: 1fr; }
-      h1 { font-size: clamp(3.1rem, 14vw, 6rem); }
+    .pipe {
+      position: absolute;
+      width: 66%;
+      height: 43%;
+      inset: 21% auto auto 16%;
+      border: clamp(1rem, 2vw, 2rem) solid #86bca8;
+      border-left: 0;
+      border-radius: 0 5rem 5rem 0;
+    }
+    .pipe + .pipe {
+      inset: auto 16% 19% auto;
+      transform: rotate(180deg);
+      width: 50%;
+      height: 37%;
+      border-color: var(--accent);
+    }
+    .services { padding-block: clamp(2rem, 4vw, 3.5rem); }
+    h2 { font-size: clamp(1.8rem, 4vw, 3rem); letter-spacing: -.05em; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 1rem;
+      margin-top: 1.25rem;
+    }
+    article { padding: 1.15rem; border-top: 2px solid #6a8b7b; background: #e9ebe0; }
+    h3 { font-size: 1.05rem; margin-bottom: .35rem; }
+    article p { color: #435b53; font-size: .94rem; }
+    @media (max-width: 46rem) {
+      .hero, .grid { grid-template-columns: 1fr; }
+      .drawing { aspect-ratio: 1.9; min-height: 10rem; }
     }
   </style>
 </head>
 <body>
-  <header class="top">
-    <div class="wrap bar">
-      <a class="brand" href="/">Vice Gecesi</a>
-      <nav aria-label="Ana gezinme"><a href="#oyun-gecesi">Oyun gecesi</a></nav>
-    </div>
+  <header class="dark">
+      <div class="wrap bar">
+        <a class="brand" href="/">Gündoğdu</a>
+        <nav aria-label="Ana gezinme"><a href="#hizmetler">Hizmetler</a></nav>
+      </div>
   </header>
   <main>
-    <section class="hero" aria-labelledby="baslik">
-      <div class="wrap layout">
+    <div class="dark">
+      <section class="wrap hero" aria-labelledby="baslik">
         <div>
-          <p class="tag">GTA VI HAYRAN SAYFASI</p>
-          <h1 id="baslik">Vice <span>Gecesi</span></h1>
-          <p class="intro">Kumanda elde, gözler ekranda. GTA VI atmosferinden esinlenen bir oyun gecesi.</p>
+          <h1 id="baslik">Gündoğdu <span>Mekanik Tesisat</span></h1>
+          <p class="intro">Konutlar ve ticari yapılar için ısıtma, soğutma, havalandırma ve sıhhi tesisat çözümleri.</p>
+          <a class="button" href="#hizmetler">Hizmetleri incele <span aria-hidden="true">↓</span></a>
         </div>
-        <figure>
-          <img src="/assets/oyun-gecesi.jpg" alt="Kumandayla oyun oynayan bir kişi ve televizyonda şehir içinde ilerleyen bir araç">
-          <figcaption>Oyun gecesinden bir kare</figcaption>
-        </figure>
-      </div>
-    </section>
-    <section class="story" id="oyun-gecesi" aria-labelledby="hikaye">
-      <div class="wrap">
-        <h2 id="hikaye">Salonun içinden, şehrin sokaklarına</h2>
-        <p>Televizyonda güneşli bir sokak, kumandanın başında ise bir oyuncu. Fotoğraf, açık dünya oyunlarının en tanıdık anlarından birini yakalıyor: yola çıkmak.</p>
+        <div class="drawing" aria-hidden="true"><div class="pipe"></div><div class="pipe"></div></div>
+      </section>
+    </div>
+    <section class="wrap services" id="hizmetler" aria-labelledby="hizmet-baslik">
+      <h2 id="hizmet-baslik">Hizmetler</h2>
+      <div class="grid">
+        <article><h3>Isıtma ve soğutma</h3><p>Yapının kullanımına uygun ısıtma ve soğutma sistemlerinin kurulumu.</p></article>
+        <article><h3>Havalandırma</h3><p>Taze hava ve egzoz sistemleri için kanal ve ekipman uygulamaları.</p></article>
+        <article><h3>Sıhhi tesisat</h3><p>Temiz su, sıcak su ve atık su hatlarının kurulumu ve yenilenmesi.</p></article>
       </div>
     </section>
   </main>
