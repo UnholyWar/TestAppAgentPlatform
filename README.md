@@ -1,6 +1,6 @@
 # TestAppAgentPlatform
 
-Node.js durum sayfası. Ana sayfa uygulama durumunu gösterir. `/health` uç noktası HTTP 200 ve `{"status":"ok"}` döndürür.
+Node.js ile sunulan tek sayfalık geliştirici portfolyosu. `/health` uç noktası HTTP 200 ve `{"status":"ok"}` döndürür.
 
 Yerel çalıştırma
 
@@ -15,4 +15,4 @@ docker build -t test-app-agent-platform .
 docker run --rm -p 3000:3000 test-app-agent-platform
 ```
 
-Durum sayfasını http://localhost:3000 adresinde açabilirsiniz.
+Portfolyoyu http://localhost:3000 adresinde açabilirsiniz.
