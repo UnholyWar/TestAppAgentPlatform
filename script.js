@@ -12,19 +12,47 @@ let projects = [];
 let heroIndex=0,projectPage=0,showAll=false;
 const heroPhoto=document.getElementById('hero-photo');
 const heroDots=document.getElementById('hero-dots');
-function renderHero(){heroPhoto.style.backgroundImage=`url('${heroImages[heroIndex]}')`;heroDots.innerHTML=heroImages.map((_,i)=>`<button aria-label="${i+1}. slayt" class="${i===heroIndex?'active':''}" data-slide="${i}"></button>`).join('');}
-function changeHero(delta){heroIndex=(heroIndex+delta+heroImages.length)%heroImages.length;renderHero();}
-document.getElementById('hero-prev').addEventListener('click',()=>changeHero(-1));document.getElementById('hero-next').addEventListener('click',()=>changeHero(1));heroDots.addEventListener('click',e=>{const b=e.target.closest('[data-slide]');if(b){heroIndex=Number(b.dataset.slide);renderHero();}});renderHero();
+const heroButtons = heroImages.map((_, index) => {
+  const button = document.createElement('button');
+  button.type = 'button';
+  button.setAttribute('aria-label', (index + 1) + '. giriş görseli');
+  button.addEventListener('click', () => showHero(index));
+  heroDots.append(button);
+  return button;
+});
+
+function showHero(index) {
+  heroIndex = (index + heroImages.length) % heroImages.length;
+  heroPhoto.style.backgroundImage = `url('${heroImages[heroIndex]}')`;
+  heroButtons.forEach((button, position) => {
+    const selected = position === heroIndex;
+    button.classList.toggle('active', selected);
+    button.setAttribute('aria-pressed', String(selected));
+  });
+}
+
+document.getElementById('hero-prev').addEventListener('click', () => showHero(heroIndex - 1));
+document.getElementById('hero-next').addEventListener('click', () => showHero(heroIndex + 1));
+showHero(0);
+
 const projectGrid = document.getElementById('project-grid');
 const projectDots = document.getElementById('project-dots');
 const projectControls = document.querySelector('.project-controls');
 const showAllButton = document.getElementById('show-all');
-const pageSize = 3;
+const mobileProjects = window.matchMedia('(max-width: 760px)');
+let projectPageSize = mobileProjects.matches ? 1 : 3;
+
+mobileProjects.addEventListener('change', event => {
+  const firstProject = projectPage * projectPageSize;
+  projectPageSize = event.matches ? 1 : 3;
+  projectPage = Math.floor(firstProject / projectPageSize);
+  renderProjects();
+});
 
 function renderProjects() {
-  const pageCount = Math.ceil(projects.length / pageSize);
-  const offset = showAll ? 0 : projectPage * pageSize;
-  const shown = showAll ? projects : projects.slice(offset, offset + pageSize);
+  const pageCount = Math.ceil(projects.length / projectPageSize);
+  const offset = showAll ? 0 : projectPage * projectPageSize;
+  const shown = showAll ? projects : projects.slice(offset, offset + projectPageSize);
   const cards = shown.map((project, index) => {
     const card = document.createElement('button');
     card.className = 'project-card';
@@ -51,12 +79,13 @@ function renderProjects() {
       const dot = document.createElement('button');
       dot.classList.toggle('active', page === projectPage);
       dot.dataset.page = page;
+      if (page === projectPage) dot.setAttribute('aria-current', 'true');
       dot.setAttribute('aria-label', (page + 1) + '. proje sayfası');
       projectDots.append(dot);
     }
   }
   projectControls.style.display = paginate ? 'flex' : 'none';
-  showAllButton.hidden = pageCount < 2;
+  showAllButton.hidden = pageCount < 2 && !showAll;
 }
 
 async function loadProjects() {
@@ -80,7 +109,7 @@ async function loadProjects() {
 }
 
 function moveProjects(delta) {
-  const pageCount = Math.ceil(projects.length / pageSize);
+  const pageCount = Math.ceil(projects.length / projectPageSize);
   if (pageCount < 2) return;
   projectPage = (projectPage + delta + pageCount) % pageCount;
   renderProjects();
@@ -92,16 +121,18 @@ projectDots.addEventListener('click', event => {
   if (!dot) return;
   projectPage = Number(dot.dataset.page);
   renderProjects();
+  projectDots.children[projectPage]?.focus();
 });
 showAllButton.addEventListener('click', () => {
   showAll = !showAll;
+  showAllButton.setAttribute('aria-expanded', String(showAll));
   showAllButton.textContent = showAll ? 'Daha Az Göster ↑' : 'Tüm Projeleri Gör →';
   renderProjects();
 });
 loadProjects();
 const modal=document.getElementById('project-modal');projectGrid.addEventListener('click',e=>{const b=e.target.closest('[data-project]');if(!b)return;const p=projects[Number(b.dataset.project)];document.getElementById('modal-image').src=p.image;document.getElementById('modal-image').alt=p.title;document.getElementById('modal-title').textContent=p.title;document.getElementById('modal-description').textContent=p.description;modal.hidden=false;document.body.style.overflow='hidden';});
 function closeModal(){modal.hidden=true;document.body.style.overflow='';}modal.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
-const menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelector('.nav-links');menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');});navLinks.addEventListener('click',e=>{if(e.target.closest('a')){navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}});document.getElementById('year').textContent=new Date().getFullYear();
+const menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelector('.nav-links');menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');});navLinks.addEventListener('click',e=>{if(e.target.closest('a')){navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');menuToggle.setAttribute('aria-label','Menüyü aç');}});document.getElementById('year').textContent=new Date().getFullYear();
 
 const founderPhoto = document.getElementById('founder-photo');
 function showFounderPhoto() {
@@ -114,6 +145,7 @@ async function loadReferences() {
   const grid = document.getElementById('reference-grid');
   const status = document.getElementById('reference-status');
   const controls = document.getElementById('reference-controls');
+  const toggle = document.getElementById('reference-toggle');
   const pageLabel = document.getElementById('reference-page');
 
   try {
@@ -145,19 +177,31 @@ async function loadReferences() {
     const getPageSize = () => Number(getComputedStyle(grid).getPropertyValue('--reference-columns'));
     let pageSize = getPageSize();
     let pageIndex = 0;
+    let showAllReferences = false;
     function updateGrid() {
       const pageCount = Math.ceil(cards.length / pageSize);
       const first = pageIndex * pageSize;
-      cards.forEach((card, index) => { card.hidden = index < first || index >= first + pageSize; });
-      controls.hidden = pageCount <= 1;
-      pageLabel.textContent = pageCount ? (pageIndex + 1) + ' / ' + pageCount : '';
+      const end = Math.min(first + pageSize, cards.length);
+      cards.forEach((card, index) => {
+        card.hidden = !showAllReferences && (index < first || index >= end);
+      });
+      controls.hidden = pageCount <= 1 || showAllReferences;
+      toggle.hidden = pageCount <= 1 && !showAllReferences;
+      pageLabel.textContent = controls.hidden ? '' : `${first + 1}–${end} / ${cards.length} referans`;
+      grid.classList.toggle('show-all', showAllReferences);
     }
     function move(delta) {
       const pageCount = Math.ceil(cards.length / pageSize);
-      if (pageCount <= 1) return;
+      if (showAllReferences || pageCount <= 1) return;
       pageIndex = (pageIndex + delta + pageCount) % pageCount;
       updateGrid();
     }
+    toggle.addEventListener('click', () => {
+      showAllReferences = !showAllReferences;
+      toggle.setAttribute('aria-expanded', String(showAllReferences));
+      toggle.textContent = showAllReferences ? 'Daha az göster' : 'Tüm referansları göster';
+      updateGrid();
+    });
     document.getElementById('reference-prev').addEventListener('click', () => move(-1));
     document.getElementById('reference-next').addEventListener('click', () => move(1));
     controls.addEventListener('keydown', event => {
