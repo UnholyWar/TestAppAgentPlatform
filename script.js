@@ -160,6 +160,28 @@ async function loadReferences() {
     }
     document.getElementById('reference-prev').addEventListener('click', () => move(-1));
     document.getElementById('reference-next').addEventListener('click', () => move(1));
+    controls.addEventListener('keydown', event => {
+      if (event.key !== 'ArrowLeft' && event.key !== 'ArrowRight') return;
+      event.preventDefault();
+      move(event.key === 'ArrowLeft' ? -1 : 1);
+    });
+
+    let touchStart;
+    grid.addEventListener('pointerdown', event => {
+      if (event.pointerType !== 'touch' || !event.isPrimary) return;
+      touchStart = { id: event.pointerId, x: event.clientX, y: event.clientY };
+    });
+    grid.addEventListener('pointercancel', event => {
+      if (touchStart?.id === event.pointerId) touchStart = undefined;
+    });
+    grid.addEventListener('pointerup', event => {
+      if (touchStart?.id !== event.pointerId) return;
+      const dx = event.clientX - touchStart.x;
+      const dy = event.clientY - touchStart.y;
+      touchStart = undefined;
+      if (Math.abs(dx) >= 45 && Math.abs(dx) > Math.abs(dy)) move(dx < 0 ? 1 : -1);
+    });
+
     window.addEventListener('resize', () => {
       const nextSize = getPageSize();
       if (nextSize === pageSize) return;
