@@ -1,587 +1,122 @@
-{
-  "meta": {
-    "title": "Referanslarımız",
-    "company": "Gündoğdu Mekanik",
-    "totalReferences": 31,
-    "totalBrands": 24,
-    "logoPolicy": "Sadece logo URL’si bulunan referanslar dahildir.",
-    "sourceDocument": "GÜNDOĞDU MEKANİK REFERANSLAR.05022025.pdf",
-    "notes": [
-      "Proje ve hizmet bilgileri kaynak PDF’den alınmıştır. Marka logoları harici kaynaklardan derlenmiştir.",
-      "Aynı projeye ait birebir yinelenen PDF satırları birleştirilmiştir; farklı konumlardaki projeler korunmuştur.",
-      "Logo URL’leri üçüncü taraf sunuculara bağlıdır; üretim ortamında görselleri CDN veya yerel sunucuda tutmak önerilir.",
-      "Kaynak belgedeki birimi belirtilmemiş sayısal sütun, yanıltıcı olmaması için web verisine dahil edilmemiştir."
-    ]
+[
+  {
+    "id": "GM-001",
+    "companyName": "ERLAU",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/0/08/Erlau_AG.png"
   },
-  "categories": [
-    {
-      "slug": "fabrika-ve-ofisler",
-      "name": "Fabrika ve Ofisler",
-      "count": 15
-    },
-    {
-      "slug": "zincir-magazalar",
-      "name": "Zincir Mağazalar",
-      "count": 6
-    },
-    {
-      "slug": "apartman-ve-toplu-konut",
-      "name": "Apartman ve Toplu Konut",
-      "count": 1
-    },
-    {
-      "slug": "yali-kosk-villa",
-      "name": "Yalı, Köşk ve Villa",
-      "count": 2
-    },
-    {
-      "slug": "medikal",
-      "name": "Medikal",
-      "count": 2
-    },
-    {
-      "slug": "egitim",
-      "name": "Eğitim",
-      "count": 5
-    }
-  ],
-  "references": [
-    {
-      "id": "GM-001",
-      "company": "ERLAU",
-      "projectName": "ERLAU (RUD Group) Türkiye",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Gebze",
-      "services": [
-        "Mekanik tesisat",
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Havalandırma",
-        "Yangın tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "MEKANİK TES.(Sıhhi tesisat ,ısıtma,soğutma,havalandırma,yangın tesisatı,otomatik kontrol)",
-      "logoUrl": "https://www.galabau-messe.com/_next/image?q=75&url=https%3A%2F%2Fimages.nuernbergmesse.de%2Ffiles%2F66bba519-da4f-0398-bdf4-731dbecf8716.jpg&w=3840",
-      "logoSourceUrl": "https://www.galabau-messe.com/en/exhibitors/erlau-eine-marke-der-rud-gruppe-2549284",
-      "websiteUrl": null,
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-002",
-      "company": "Tüpraş",
-      "projectName": "Tüpraş",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Kocaeli̇",
-      "services": [
-        "Mekanik tesisat",
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Havalandırma",
-        "Yangın tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "MEKANİK TES.(Sıhhi tesisat ,ısıtma,soğutma,havalandırma,yangın tesisatı,otomatik kontrol)",
-      "logoUrl": "https://kap.org.tr/tr/api/member/logo/4028e4a140f2ed720140f37f139c01bc",
-      "logoSourceUrl": "https://kap.org.tr/tr/sirket-bilgileri/ozet/1105-tupras-turkiye-petrol-rafinerileri-a-s",
-      "websiteUrl": "https://www.tupras.com.tr",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-003",
-      "company": "Tüpraş",
-      "projectName": "Tüpraş",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Kirikkale",
-      "services": [
-        "Mekanik tesisat",
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Havalandırma",
-        "Yangın tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "MEKANİK TES.(Sıhhi tesisat ,ısıtma,soğutma,havalandırma,yangın tesisatı,otomatik kontrol)",
-      "logoUrl": "https://kap.org.tr/tr/api/member/logo/4028e4a140f2ed720140f37f139c01bc",
-      "logoSourceUrl": "https://kap.org.tr/tr/sirket-bilgileri/ozet/1105-tupras-turkiye-petrol-rafinerileri-a-s",
-      "websiteUrl": "https://www.tupras.com.tr",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-005",
-      "company": "Spor Dünyası",
-      "projectName": "Spor Dünyası",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Cerkezköy",
-      "services": [
-        "Yangın tesisatı",
-        "Saha hidrant tesisatı"
-      ],
-      "workDescription": "Yangın Tesisatı ( yangın söndürme sistemleri Sprink ve Dolaplar ) + Saha Hidrant Tesisatı",
-      "logoUrl": "https://www.logo.com.tr/_next/image?q=75&url=%2Ffiles%2Flogocomtr%2FUploads%2FImages%2Fbh-logo-spor-dunyasi.jpg&w=1080",
-      "logoSourceUrl": "https://www.logo.com.tr/kategori/wms-depo-yonetim-sistemi",
-      "websiteUrl": null,
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-006",
-      "company": "Assan Port",
-      "projectName": "Assan Liman İşletmeleri A.Ş.",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "İskenderun",
-      "services": [
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Yangın tesisatı",
-        "Saha hidrant tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "Sıhhi Tesisat+Isıtma ve Soğutma Tesisatı + Yangın Tesisatı ( yangın söndürme sistemleri Sprink ve Dolaplar ) + Saha Hidrant Tesisatı +Otomatik Kontrol",
-      "logoUrl": "https://www.kibar.com/-/media/images/basin/logolar/hizmet/assan-port/assan-port.png?h=50&hash=1E67F51C347B5781FCDDF32097BCB34762BCDC4B&la=tr-TR&w=200",
-      "logoSourceUrl": "https://www.kibar.com/tr-tr/medya-merkezi/logolar",
-      "websiteUrl": "https://www.kibar.com",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-007",
-      "company": "Assan Alüminyum",
-      "projectName": "Assan Alüminyum",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Di̇lovasi",
-      "services": [
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Yangın tesisatı",
-        "Saha hidrant tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "Sıhhi Tesisat+Isıtma ve Soğutma Tesisatı + Yangın Tesisatı ( yangın söndürme sistemleri Sprink ve Dolaplar ) + Saha Hidrant Tesisatı +Otomatik Kontrol",
-      "logoUrl": "https://www.kibar.com/-/media/images/basin/logolar/sanayi/assan-aluminyum/assan-aluminyum-2017-png.png?h=50&hash=E350AAD7A64528B391A5A2EF8F2EF0092BDA554D&la=tr-TR&w=200",
-      "logoSourceUrl": "https://www.kibar.com/tr-tr/medya-merkezi/logolar",
-      "websiteUrl": "https://www.assanaluminyum.com",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-008",
-      "company": "DEVA Holding",
-      "projectName": "Deva İlaç",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Cerkezköy",
-      "services": [
-        "Havalandırma"
-      ],
-      "workDescription": "HAVALANDIRMA",
-      "logoUrl": "https://www.peakscientific.com/media/cbnbtnxu/transparent-dh-logo.png",
-      "logoSourceUrl": "https://www.peakscientific.com/discover/user-stories/deva-holding-user-story/",
-      "websiteUrl": null,
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-011",
-      "company": "Nexans",
-      "projectName": "Nexans Kablo",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Tuzla",
-      "services": [
-        "Doğalgaz"
-      ],
-      "workDescription": "DOĞALGAZ",
-      "logoUrl": "https://www.nexans.com/app/uploads/2025/10/logo-nexans.jpg",
-      "logoSourceUrl": "https://www.nexans.com/press-releases/rhode-project-pioneering-floating-hvdc-solutions/",
-      "websiteUrl": "https://www.nexans.com",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-012",
-      "company": "Kibar Holding",
-      "projectName": "Kibar Holding Yönetim",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Karaköy",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://www.kibar.com/-/media/images/basin/logolar/kibar-holding/kibar/kibar-logo-master.png?h=41&hash=7D1072773FD86C0F9AFA2E52BDC91B33D1294ABE&la=tr-TR&w=120",
-      "logoSourceUrl": "https://www.kibar.com/tr-tr/medya-merkezi/logolar",
-      "websiteUrl": "https://www.kibar.com",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-013",
-      "company": "Eczacıbaşı",
-      "projectName": "Eczacıbaşı E-Kart",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Karaköy",
-      "services": [
-        "Yerden ısıtma"
-      ],
-      "workDescription": "YERDEN ISITMA",
-      "logoUrl": "https://static.wixstatic.com/media/e31d8f_8ccf89217c5a4fe6ae38bf4c2e539583~mv2.png/v1/fill/w_591%2Ch_591%2Cal_c%2Cq_85%2Cenc_avif%2Cquality_auto/e31d8f_8ccf89217c5a4fe6ae38bf4c2e539583~mv2.png",
-      "logoSourceUrl": "https://www.globalboxtr.com/referanslar",
-      "websiteUrl": null,
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-014",
-      "company": "Halkbank",
-      "projectName": "Halkbank",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Maslak",
-      "services": [
-        "Mekanik tesisat",
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Havalandırma",
-        "Yangın tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "MEKANİK TES.(Sıhhi tesisat ,ısıtma,soğutma,havalandırma,yangın tesisatı,otomatik kontrol)",
-      "logoUrl": "https://logowik.com/content/uploads/images/halk-bankasi8568.logowik.com.webp",
-      "logoSourceUrl": "https://logowik.com/halk-bankasi-logo-vector-png-svg-free-download-27761.html",
-      "websiteUrl": "https://www.halkbank.com.tr",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-016",
-      "company": "Nuh Çimento Grubu",
-      "projectName": "Nuh Beton - Santral",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "İzmi̇t",
-      "services": [
-        "Isı merkezi"
-      ],
-      "workDescription": "ISI MERKEZİ",
-      "logoUrl": "https://kap.org.tr/tr/api/member/logo/4028e4a141558bdd014156053d9f04b2",
-      "logoSourceUrl": "https://www.kap.org.tr/tr/sirket-bilgileri/ozet/4028e4a141558bdd014156053d9f04b2",
-      "websiteUrl": "https://www.nuhcimento.com.tr",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-017",
-      "company": "Nuh Çimento Grubu",
-      "projectName": "Nuh Beton Genel Müdürlük",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "Samandira",
-      "services": [
-        "Isı merkezi"
-      ],
-      "workDescription": "ISI MERKEZİ",
-      "logoUrl": "https://kap.org.tr/tr/api/member/logo/4028e4a141558bdd014156053d9f04b2",
-      "logoSourceUrl": "https://www.kap.org.tr/tr/sirket-bilgileri/ozet/4028e4a141558bdd014156053d9f04b2",
-      "websiteUrl": "https://www.nuhcimento.com.tr",
-      "sourcePage": 1
-    },
-    {
-      "id": "GM-023",
-      "company": "Opet",
-      "projectName": "Opet Dünya Ticaret Merkezi",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "İstanbul",
-      "services": [
-        "HVAC"
-      ],
-      "workDescription": "HVAC",
-      "logoUrl": "https://opetapicdn.azureedge.net/files/opet_logo_606x512_web_1004d1_acd2d1-8a24ea.jpg",
-      "logoSourceUrl": "https://www.opet.com.tr/kampanyalar/Opet-Pay-Odemesine-175-TL-Hediye-Bakiye-Kampanyasi",
-      "websiteUrl": "https://www.opet.com.tr",
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-024",
-      "company": "Nurol Holding",
-      "projectName": "Nurol Plaza Satış Ofisi",
-      "category": "Fabrika ve Ofisler",
-      "categorySlug": "fabrika-ve-ofisler",
-      "location": "İstanbul",
-      "services": [
-        "VRV"
-      ],
-      "workDescription": "VRV",
-      "logoUrl": "https://logowik.com/content/uploads/images/nurol-holding3466.logowik.com.webp",
-      "logoSourceUrl": "https://logowik.com/nurol-holding-logo-vector-svg-png-free-download-27885.html",
-      "websiteUrl": null,
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-039",
-      "company": "İpekyol",
-      "projectName": "İpekyol",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "Genel",
-      "services": [
-        "Klima"
-      ],
-      "workDescription": "KLİMA İŞLERİ",
-      "logoUrl": "https://margioutlet.com/wp-content/uploads/2022/03/ipekyol-logo-kare.jpg",
-      "logoSourceUrl": "https://margioutlet.com/magaza/ipekyol/",
-      "websiteUrl": null,
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-040",
-      "company": "Turkcell",
-      "projectName": "Turkcell Taksim",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "Taksi̇m",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://cdn.webrazzi.com/uploads/2021/04/turkcell-logo-2017-edzimdi-794.jpg",
-      "logoSourceUrl": "https://webrazzi.com/2021/04/05/20-bin-calisani-ile-kademeli-uzaktan-calismaya-gecen-turkcell-in-kullandigi-5-servis",
-      "websiteUrl": "https://www.turkcell.com.tr",
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-041",
-      "company": "Turkcell",
-      "projectName": "Turkcell İstinye Park",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "İsti̇nye",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://cdn.webrazzi.com/uploads/2021/04/turkcell-logo-2017-edzimdi-794.jpg",
-      "logoSourceUrl": "https://webrazzi.com/2021/04/05/20-bin-calisani-ile-kademeli-uzaktan-calismaya-gecen-turkcell-in-kullandigi-5-servis",
-      "websiteUrl": "https://www.turkcell.com.tr",
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-043",
-      "company": "Koçtaş",
-      "projectName": "Koçtaş",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "Genel",
-      "services": [
-        "Klima",
-        "Doğalgaz"
-      ],
-      "workDescription": "KLİMA - DOĞALGAZ",
-      "logoUrl": "https://www.ispartameydan.com/wp-content/uploads/2022/04/koctas.jpg",
-      "logoSourceUrl": "https://www.ispartameydan.com/koctas/",
-      "websiteUrl": "https://www.koctas.com.tr",
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-044",
-      "company": "Securitas",
-      "projectName": "Securitas Güvenlik",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "Genel",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://brand.securitas.com/wp-content/uploads/2021/03/logo_alone_thumb-720x480.jpg",
-      "logoSourceUrl": "https://brand.securitas.com/brand-experience/social-media/teams-zoom/",
-      "websiteUrl": null,
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-045",
-      "company": "Bereket Döner",
-      "projectName": "Bereket Döner",
-      "category": "Zincir Mağazalar",
-      "categorySlug": "zincir-magazalar",
-      "location": "Genel",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://mdsprodcdn.azureedge.net/mds/uploads/store/logo/69b00d12799d4.jpg",
-      "logoSourceUrl": "https://www.emaarsquaremall.com/en/shops-directory/",
-      "websiteUrl": null,
-      "sourcePage": 2
-    },
-    {
-      "id": "GM-055",
-      "company": "ENKA İnşaat",
-      "projectName": "Enka İnşaat",
-      "category": "Apartman ve Toplu Konut",
-      "categorySlug": "apartman-ve-toplu-konut",
-      "location": "İsti̇nye",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Enka_logo.svg",
-      "logoSourceUrl": "https://commons.wikimedia.org/wiki/File:Enka_logo.svg",
-      "websiteUrl": "https://www.enka.com",
-      "sourcePage": 3
-    },
-    {
-      "id": "GM-066",
-      "company": "KİPTAŞ",
-      "projectName": "KİPTAŞ Aydos Villası",
-      "category": "Yalı, Köşk ve Villa",
-      "categorySlug": "yali-kosk-villa",
-      "location": "Pendi̇k",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://kiptas.istanbul/assets/kurumsal-kimlik-kilavuzu/kiptas.svg",
-      "logoSourceUrl": "https://kiptas.istanbul/kurumsal-kimlik-kilavuzu",
-      "websiteUrl": "https://kiptas.istanbul",
-      "sourcePage": 3
-    },
-    {
-      "id": "GM-069",
-      "company": "Spor Dünyası",
-      "projectName": "Spor Dünyası Villası",
-      "category": "Yalı, Köşk ve Villa",
-      "categorySlug": "yali-kosk-villa",
-      "location": "Florya",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://www.logo.com.tr/_next/image?q=75&url=%2Ffiles%2Flogocomtr%2FUploads%2FImages%2Fbh-logo-spor-dunyasi.jpg&w=1080",
-      "logoSourceUrl": "https://www.logo.com.tr/kategori/wms-depo-yonetim-sistemi",
-      "websiteUrl": null,
-      "sourcePage": 3
-    },
-    {
-      "id": "GM-080",
-      "company": "İstanbul Aydın Üniversitesi",
-      "projectName": "İstanbul Aydın Üniversitesi Diş Hekimliği Fakültesi",
-      "category": "Medikal",
-      "categorySlug": "medikal",
-      "location": "Bakirköy",
-      "services": [
-        "VRV"
-      ],
-      "workDescription": "VRV",
-      "logoUrl": "https://www.rahmatr.com/upload/universities/99b0133c74641fd08e4fc4b19d306ff4.png",
-      "logoSourceUrl": "https://www.rahmatr.com/universities/istanbul-aydin-university",
-      "websiteUrl": "https://www.aydin.edu.tr",
-      "sourcePage": 4
-    },
-    {
-      "id": "GM-085",
-      "company": "DEVA Holding",
-      "projectName": "Deva İlaç",
-      "category": "Medikal",
-      "categorySlug": "medikal",
-      "location": "Cerkezköy",
-      "services": [
-        "Sıhhi tesisat",
-        "Isıtma",
-        "Soğutma",
-        "Yangın tesisatı",
-        "Saha hidrant tesisatı",
-        "Otomatik kontrol"
-      ],
-      "workDescription": "Sıhhi Tesisat+Isıtma ve Soğutma Tesisatı + Yangın Tesisatı ( yangın söndürme sistemleri Sprink ve Dolaplar ) + Saha Hidrant Tesisatı +Otomatik Kontrol",
-      "logoUrl": "https://www.peakscientific.com/media/cbnbtnxu/transparent-dh-logo.png",
-      "logoSourceUrl": "https://www.peakscientific.com/discover/user-stories/deva-holding-user-story/",
-      "websiteUrl": null,
-      "sourcePage": 4
-    },
-    {
-      "id": "GM-087",
-      "company": "Yeditepe Üniversitesi",
-      "projectName": "Yeditepe Üniversitesi",
-      "category": "Eğitim",
-      "categorySlug": "egitim",
-      "location": "Kayişdaği",
-      "services": [
-        "Yerden ısıtma"
-      ],
-      "workDescription": "YERDEN ISITMA",
-      "logoUrl": "https://yeditepe.edu.tr/sites/default/files/yeditepe_yatay_logo_31.jpg",
-      "logoSourceUrl": "https://yeditepe.edu.tr/tr/turkiyede-ilk-kez-uygulanan-yontem-refluye-care-olacak",
-      "websiteUrl": "https://yeditepe.edu.tr",
-      "sourcePage": 4
-    },
-    {
-      "id": "GM-088",
-      "company": "İstanbul Aydın Üniversitesi",
-      "projectName": "İstanbul Aydın Üniversitesi Kampüsü",
-      "category": "Eğitim",
-      "categorySlug": "egitim",
-      "location": "Florya",
-      "services": [
-        "HVAC"
-      ],
-      "workDescription": "HVAC",
-      "logoUrl": "https://www.rahmatr.com/upload/universities/99b0133c74641fd08e4fc4b19d306ff4.png",
-      "logoSourceUrl": "https://www.rahmatr.com/universities/istanbul-aydin-university",
-      "websiteUrl": "https://www.aydin.edu.tr",
-      "sourcePage": 4
-    },
-    {
-      "id": "GM-090",
-      "company": "İstanbul Aydın Üniversitesi",
-      "projectName": "İstanbul Aydın Üniversitesi Kampüsü",
-      "category": "Eğitim",
-      "categorySlug": "egitim",
-      "location": "Bakirköy",
-      "services": [
-        "VRV"
-      ],
-      "workDescription": "VRV",
-      "logoUrl": "https://www.rahmatr.com/upload/universities/99b0133c74641fd08e4fc4b19d306ff4.png",
-      "logoSourceUrl": "https://www.rahmatr.com/universities/istanbul-aydin-university",
-      "websiteUrl": "https://www.aydin.edu.tr",
-      "sourcePage": 5
-    },
-    {
-      "id": "GM-091",
-      "company": "Özel ALEV Okulları",
-      "projectName": "ALEV Eğitim Kurumları",
-      "category": "Eğitim",
-      "categorySlug": "egitim",
-      "location": "Ömerli̇",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://alevbilgilendirmesistemi.azurewebsites.net/img/LogoForWeb3.png",
-      "logoSourceUrl": "https://alevbilgilendirmesistemi.azurewebsites.net/",
-      "websiteUrl": "https://www.alev.k12.tr",
-      "sourcePage": 5
-    },
-    {
-      "id": "GM-093",
-      "company": "Eyüboğlu Eğitim Kurumları",
-      "projectName": "Eyüboğlu Okulları",
-      "category": "Eğitim",
-      "categorySlug": "egitim",
-      "location": "Genel",
-      "services": [
-        "Mekanik tesisat"
-      ],
-      "workDescription": "MEKANİK TES.",
-      "logoUrl": "https://www.eyuboglu.k12.tr/dosyalar/basvuru/20_02_2021_Okul_Tanitimi.webp",
-      "logoSourceUrl": "https://www.eyuboglu.k12.tr/tr/kayit/tanitim",
-      "websiteUrl": "https://www.eyuboglu.k12.tr",
-      "sourcePage": 5
-    }
-  ]
-}
+  {
+    "id": "GM-002",
+    "companyName": "Tüpraş",
+    "url": "https://kap.org.tr/tr/api/member/logo/4028e4a140f2ed720140f37f139c01bc"
+  },
+  {
+    "id": "GM-005",
+    "companyName": "Spor Dünyası",
+    "url": "https://www.logo.com.tr/_next/image?q=75&url=%2Ffiles%2Flogocomtr%2FUploads%2FImages%2Fbh-logo-spor-dunyasi.jpg&w=1080"
+  },
+  {
+    "id": "GM-006",
+    "companyName": "Assan Port",
+    "url": "https://www.kibar.com/-/media/images/basin/logolar/hizmet/assan-port/assan-port.png?h=50&hash=1E67F51C347B5781FCDDF32097BCB34762BCDC4B&la=tr-TR&w=200"
+  },
+  {
+    "id": "GM-007",
+    "companyName": "Assan Alüminyum",
+    "url": "https://www.assanaluminyum.com/-/media/files/assanaluminyum/kurumsal-kimlik/assan-aluminyum-logo-png.png?la=tr-tr"
+  },
+  {
+    "id": "GM-008",
+    "companyName": "DEVA Holding",
+    "url": "https://www.peakscientific.com/media/cbnbtnxu/transparent-dh-logo.png"
+  },
+  {
+    "id": "GM-011",
+    "companyName": "Nexans",
+    "url": "https://www.nexans.com/app/uploads/2025/10/logo-nexans.jpg"
+  },
+  {
+    "id": "GM-012",
+    "companyName": "Kibar Holding",
+    "url": "https://www.kibar.com/-/media/images/basin/logolar/kibar-holding/kibar/kibar-logo-master.png?h=41&hash=7D1072773FD86C0F9AFA2E52BDC91B33D1294ABE&la=tr-TR&w=120"
+  },
+  {
+    "id": "GM-013",
+    "companyName": "Eczacıbaşı",
+    "url": "https://static.wixstatic.com/media/e31d8f_8ccf89217c5a4fe6ae38bf4c2e539583~mv2.png/v1/fill/w_591%2Ch_591%2Cal_c%2Cq_85%2Cenc_avif%2Cquality_auto/e31d8f_8ccf89217c5a4fe6ae38bf4c2e539583~mv2.png"
+  },
+  {
+    "id": "GM-014",
+    "companyName": "Halkbank",
+    "url": "https://logowik.com/content/uploads/images/halk-bankasi8568.logowik.com.webp"
+  },
+  {
+    "id": "GM-016",
+    "companyName": "Nuh Çimento Grubu",
+    "url": "https://kap.org.tr/tr/api/member/logo/4028e4a141558bdd014156053d9f04b2"
+  },
+  {
+    "id": "GM-023",
+    "companyName": "Opet",
+    "url": "https://opetapicdn.azureedge.net/files/opet_logo_606x512_web_1004d1_acd2d1-8a24ea.jpg"
+  },
+  {
+    "id": "GM-024",
+    "companyName": "Nurol Holding",
+    "url": "https://logowik.com/content/uploads/images/nurol-holding3466.logowik.com.webp"
+  },
+  {
+    "id": "GM-039",
+    "companyName": "İpekyol",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/9/91/Ipekyol-logo.svg"
+  },
+  {
+    "id": "GM-040",
+    "companyName": "Turkcell",
+    "url": "https://cdn.webrazzi.com/uploads/2021/04/turkcell-logo-2017-edzimdi-794.jpg"
+  },
+  {
+    "id": "GM-043",
+    "companyName": "Koçtaş",
+    "url": "https://www.ispartameydan.com/wp-content/uploads/2022/04/koctas.jpg"
+  },
+  {
+    "id": "GM-044",
+    "companyName": "Securitas",
+    "url": "https://brand.securitas.com/wp-content/uploads/2021/03/logo_alone_thumb-720x480.jpg"
+  },
+  {
+    "id": "GM-045",
+    "companyName": "Bereket Döner",
+    "url": "https://mdsprodcdn.azureedge.net/mds/uploads/store/logo/69b00d12799d4.jpg"
+  },
+  {
+    "id": "GM-055",
+    "companyName": "ENKA İnşaat",
+    "url": "https://upload.wikimedia.org/wikipedia/commons/a/a9/Enka_logo.svg"
+  },
+  {
+    "id": "GM-066",
+    "companyName": "KİPTAŞ",
+    "url": "https://kiptas.istanbul/assets/kurumsal-kimlik-kilavuzu/kiptas.svg"
+  },
+  {
+    "id": "GM-080",
+    "companyName": "İstanbul Aydın Üniversitesi",
+    "url": "https://www.rahmatr.com/upload/universities/99b0133c74641fd08e4fc4b19d306ff4.png"
+  },
+  {
+    "id": "GM-087",
+    "companyName": "Yeditepe Üniversitesi",
+    "url": "https://yeditepe.edu.tr/sites/default/files/yeditepe_yatay_logo_31.jpg"
+  },
+  {
+    "id": "GM-091",
+    "companyName": "Özel ALEV Okulları",
+    "url": "https://alevbilgilendirmesistemi.azurewebsites.net/img/LogoForWeb3.png"
+  },
+  {
+    "id": "GM-093",
+    "companyName": "Eyüboğlu Eğitim Kurumları",
+    "url": "https://www.eyuboglu.k12.tr/dosyalar/basvuru/20_02_2021_Okul_Tanitimi.webp"
+  }
+]
