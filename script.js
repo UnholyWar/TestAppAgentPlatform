@@ -121,20 +121,20 @@ async function loadReferences() {
     const references = await response.json();
     const cards = references.map(({ companyName, url }) => {
       const card = document.createElement('li');
-      const placeholder = document.createElement('span');
-      placeholder.className = 'reference-placeholder';
-      placeholder.textContent = companyName;
       const logo = document.createElement('img');
       logo.alt = companyName;
-      logo.hidden = true;
       logo.loading = 'lazy';
       logo.referrerPolicy = 'no-referrer';
-      logo.addEventListener('load', () => {
-        placeholder.hidden = true;
-        logo.hidden = false;
+      logo.addEventListener('error', event => {
+        console.error('Referans logosu yüklenemedi:', { companyName, url: logo.currentSrc || logo.src, error: event });
+
+        const fallback = document.createElement('span');
+        fallback.className = 'reference-placeholder';
+        fallback.textContent = companyName;
+        card.replaceChildren(fallback);
       }, { once: true });
+      card.append(logo);
       logo.src = url;
-      card.append(placeholder, logo);
       return card;
     });
 
