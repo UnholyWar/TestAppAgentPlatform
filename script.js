@@ -1,5 +1,5 @@
 // Görselleri ve proje açıklamalarını yalnızca bu dosyadan değiştirebilirsiniz.
-const heroImages = ['assets/images/hero-1.jpg','assets/images/hero-2.jpg','assets/images/hero-3.jpg'];
+const heroImages = ['assets/images/hero-1.jpeg','assets/images/hero-2.jpeg','assets/images/hero-3.jpeg'];
 const projects = [
  {title:'Merkezi Isıtma Sistemi Uygulaması',image:'assets/images/proje-1.jpg',description:'Merkezi ısıtma ve mekanik dağıtım sistemleri uygulaması.'},
  {title:'Kazan Dairesi ve Dağıtım Sistemi',image:'assets/images/proje-2.jpg',description:'Kazan dairesi mekanik tesisat ve boru dağıtım çalışmaları.'},

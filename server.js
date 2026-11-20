@@ -4,15 +4,19 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
-const mime = { '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.gif': 'image/gif' };
+const mime = { '.json': 'application/json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.gif': 'image/gif' };
 const allowed = new Set(['/','/index.html','/style.css','/script.js']);
 const server = http.createServer((req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end('Method Not Allowed'); }
   let urlPath;
   try { urlPath = decodeURIComponent(new URL(req.url, 'http://localhost').pathname); }
   catch { res.writeHead(400); return res.end('Bad Request'); }
+  if (urlPath === '/health') {
+    res.writeHead(200, { 'Content-Type': mime['.json'] });
+    return res.end(req.method === 'HEAD' ? undefined : '{"status":"ok"}');
+  }
   if (urlPath === '/') urlPath = '/index.html';
-  if (!allowed.has(urlPath) && !urlPath.startsWith('/assets/images/')) { res.writeHead(404); return res.end('Not Found'); }
+  if (!allowed.has(urlPath) && !/^\/assets\/images\/[\w.-]+\.(png|jpe?g|webp|svg|ico|gif)$/i.test(urlPath)) { res.writeHead(404); return res.end('Not Found'); }
   const filename = path.resolve(root, '.' + urlPath);
   if (!filename.startsWith(root + path.sep)) { res.writeHead(403); return res.end('Forbidden'); }
   fs.stat(filename, (err, stats) => {
