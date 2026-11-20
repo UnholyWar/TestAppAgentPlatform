@@ -1,18 +1,34 @@
-# TestAppAgentPlatform
+# GMIA — Node.js Portfolyo Sitesi
 
-Node.js ile sunulan tek sayfalık Gündoğdu Mekanik Tesisat tanıtım sayfası. `/health` uç noktası HTTP 200 ve `{"status":"ok"}` döndürür.
+Mevcut HTML, CSS ve JavaScript tasarımı değiştirilmeden Node.js ile sunulmaktadır. Express veya başka npm paketi gerektirmez.
 
-Yerel çalıştırma
+## Gereksinim
+Node.js 18 veya üzeri.
 
-```sh
-node server.js
+## Başlatma
+```bash
+npm start
+```
+Tarayıcı: http://localhost:3000
+
+Geliştirme (Node.js 18+):
+```bash
+npm run dev
 ```
 
-Docker ile çalıştırma
-
-```sh
-docker build -t test-app-agent-platform .
-docker run --rm -p 3000:3000 test-app-agent-platform
+Farklı port:
+```bash
+PORT=8080 npm start
+```
+Windows PowerShell:
+```powershell
+$env:PORT=8080; npm start
 ```
 
-Tanıtım sayfasını http://localhost:3000 adresinde açabilirsiniz.
+## Görseller
+`assets/images/` klasörüne `logo.png`, `hero-1.jpg` ... `hero-3.jpg`, `proje-1.jpg` ... `proje-6.jpg` ekleyin. Görselleri eklemezseniz sitenin görsel alanları boş/yer tutucu görünebilir.
+
+İletişim bilgilerini `index.html`, proje isimlerini ve görsel yollarını `script.js` dosyasından düzenleyin.
+
+## Not
+Bu sürüm statik bir Node.js HTTP sunucusudur; veritabanı veya yönetim paneli içermez.
