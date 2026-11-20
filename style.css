@@ -25,14 +25,49 @@
 .references{padding-bottom:clamp(32px,6vw,64px)}
 .references-heading { display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-bottom:18px; }
 .references h2 { font-size:26px; margin:0; }
-.reference-grid { list-style:none; margin:0; padding:0; display:grid; grid-template-columns:repeat(auto-fit,minmax(min(100%,210px),1fr)); gap:16px; }
-.reference-grid li { background:#fff; border:1px solid var(--line); border-radius:12px; padding:14px; min-width:0; }
-.reference-frame { display:grid; grid-template: minmax(0,1fr) / minmax(0,1fr); place-items:center; aspect-ratio:2; border:1px solid var(--line); border-radius:8px; background:#f4f8fb; margin-bottom:12px; overflow:hidden; }
-.reference-frame img,.reference-placeholder { grid-area:1 / 1; }
-.reference-frame img { width:100%; height:100%; object-fit:contain; padding:14px; background:#fff; }
-.reference-placeholder { color:var(--navy); padding:10px; text-align:center; overflow-wrap:anywhere; font-weight:750; }
-.reference-grid h3 { font-size:16px; line-height:1.35; margin:0 0 5px; }
-.reference-grid p { color:var(--muted); font-size:13px; line-height:1.5; margin:5px 0 0; }
+.reference-grid {
+  --reference-columns:4;
+  display:grid;
+  grid-template-columns:repeat(var(--reference-columns),minmax(0,1fr));
+  gap:12px;
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+.reference-grid li {
+  position:relative;
+  aspect-ratio:2.2;
+  min-width:0;
+  overflow:hidden;
+  border:1px solid var(--line);
+  border-radius:12px;
+  background:#fff;
+}
+.reference-grid img,.reference-placeholder { position:absolute; inset:0; width:100%; height:100%; }
+.reference-grid img { object-fit:contain; padding:clamp(10px,2vw,22px); }
+.reference-placeholder {
+  align-content:center;
+  color:var(--navy);
+  padding:10px;
+  text-align:center;
+  overflow-wrap:anywhere;
+  font-weight:750;
+}
+.reference-toggle {
+  margin-top:16px;
+  min-height:44px;
+  padding:8px 16px;
+  border:1px solid var(--line);
+  border-radius:8px;
+  background:#fff;
+  color:var(--navy);
+  font:inherit;
+  font-weight:700;
+  cursor:pointer;
+}
+.reference-toggle:hover,.reference-toggle:focus-visible { border-color:var(--blue); }
+@media (max-width: 900px) { .reference-grid { --reference-columns:3; } }
+@media (max-width: 560px) { .reference-grid { --reference-columns:2; } }
 
 .about { padding-bottom: clamp(34px, 6vw, 56px); }
 .about-panel {

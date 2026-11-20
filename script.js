@@ -113,44 +113,49 @@ showFounderPhoto();
 async function loadReferences() {
   const grid = document.getElementById('reference-grid');
   const status = document.getElementById('reference-status');
+  const toggle = document.getElementById('reference-toggle');
+
   try {
     const response = await fetch('/assets/referanslar.json');
     if (!response.ok) throw new Error('Reference request failed');
-    const { references } = await response.json();
-
-    const cards = references.map(reference => {
+    const references = await response.json();
+    const cards = references.map(({ companyName, url }) => {
       const card = document.createElement('li');
-      const frame = document.createElement('div');
-      frame.className = 'reference-frame';
-      frame.setAttribute('aria-hidden', 'true');
       const placeholder = document.createElement('span');
       placeholder.className = 'reference-placeholder';
-      placeholder.textContent = reference.company;
-      frame.append(placeholder);
-
-      if (reference.logoUrl?.startsWith('https://')) {
-        const logo = document.createElement('img');
-        logo.alt = '';
-        logo.hidden = true;
-        logo.loading = 'lazy';
-        logo.referrerPolicy = 'no-referrer';
-        logo.addEventListener('load', () => { logo.hidden = false; }, { once: true });
-        logo.src = reference.logoUrl;
-        frame.append(logo);
-      }
-
-      const title = document.createElement('h3');
-      title.textContent = reference.projectName || reference.company;
-      const details = document.createElement('p');
-      details.textContent = [reference.company !== title.textContent && reference.company, reference.category, reference.location]
-        .filter(value => value && value !== 'Genel').join(' · ');
-      const services = document.createElement('p');
-      services.textContent = reference.services.join(' · ');
-      card.append(frame, title, details, services);
+      placeholder.textContent = companyName;
+      const logo = document.createElement('img');
+      logo.alt = companyName;
+      logo.hidden = true;
+      logo.loading = 'lazy';
+      logo.referrerPolicy = 'no-referrer';
+      logo.addEventListener('load', () => {
+        placeholder.hidden = true;
+        logo.hidden = false;
+      }, { once: true });
+      logo.src = url;
+      card.append(placeholder, logo);
       return card;
     });
+
     grid.replaceChildren(...cards);
     status.textContent = cards.length ? '' : 'Henüz referans eklenmedi.';
+
+    let expanded = false;
+    function updateGrid() {
+      const columns = Number(getComputedStyle(grid).getPropertyValue('--reference-columns'));
+      const previewCount = columns * 2;
+      cards.forEach((card, index) => { card.hidden = !expanded && index >= previewCount; });
+      toggle.hidden = cards.length <= previewCount;
+      toggle.setAttribute('aria-expanded', String(expanded));
+      toggle.textContent = expanded ? 'Daha az göster' : 'Tüm referansları göster';
+    }
+    toggle.addEventListener('click', () => {
+      expanded = !expanded;
+      updateGrid();
+    });
+    window.addEventListener('resize', updateGrid);
+    updateGrid();
   } catch {
     status.textContent = 'Referanslar yüklenemedi. PDF kataloğunu indirebilirsiniz.';
   }
