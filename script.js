@@ -113,7 +113,8 @@ showFounderPhoto();
 async function loadReferences() {
   const grid = document.getElementById('reference-grid');
   const status = document.getElementById('reference-status');
-  const toggle = document.getElementById('reference-toggle');
+  const controls = document.getElementById('reference-controls');
+  const pageLabel = document.getElementById('reference-page');
 
   try {
     const response = await fetch('/assets/referanslar.json');
@@ -141,20 +142,31 @@ async function loadReferences() {
     grid.replaceChildren(...cards);
     status.textContent = cards.length ? '' : 'Henüz referans eklenmedi.';
 
-    let expanded = false;
+    const getPageSize = () => Number(getComputedStyle(grid).getPropertyValue('--reference-columns'));
+    let pageSize = getPageSize();
+    let pageIndex = 0;
     function updateGrid() {
-      const columns = Number(getComputedStyle(grid).getPropertyValue('--reference-columns'));
-      const previewCount = columns * 2;
-      cards.forEach((card, index) => { card.hidden = !expanded && index >= previewCount; });
-      toggle.hidden = cards.length <= previewCount;
-      toggle.setAttribute('aria-expanded', String(expanded));
-      toggle.textContent = expanded ? 'Daha az göster' : 'Tüm referansları göster';
+      const pageCount = Math.ceil(cards.length / pageSize);
+      const first = pageIndex * pageSize;
+      cards.forEach((card, index) => { card.hidden = index < first || index >= first + pageSize; });
+      controls.hidden = pageCount <= 1;
+      pageLabel.textContent = pageCount ? (pageIndex + 1) + ' / ' + pageCount : '';
     }
-    toggle.addEventListener('click', () => {
-      expanded = !expanded;
+    function move(delta) {
+      const pageCount = Math.ceil(cards.length / pageSize);
+      if (pageCount <= 1) return;
+      pageIndex = (pageIndex + delta + pageCount) % pageCount;
+      updateGrid();
+    }
+    document.getElementById('reference-prev').addEventListener('click', () => move(-1));
+    document.getElementById('reference-next').addEventListener('click', () => move(1));
+    window.addEventListener('resize', () => {
+      const nextSize = getPageSize();
+      if (nextSize === pageSize) return;
+      pageIndex = Math.floor(pageIndex * pageSize / nextSize);
+      pageSize = nextSize;
       updateGrid();
     });
-    window.addEventListener('resize', updateGrid);
     updateGrid();
   } catch {
     status.textContent = 'Referanslar yüklenemedi. PDF kataloğunu indirebilirsiniz.';
