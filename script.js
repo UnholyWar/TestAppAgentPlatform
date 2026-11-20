@@ -102,3 +102,10 @@ loadProjects();
 const modal=document.getElementById('project-modal');projectGrid.addEventListener('click',e=>{const b=e.target.closest('[data-project]');if(!b)return;const p=projects[Number(b.dataset.project)];document.getElementById('modal-image').src=p.image;document.getElementById('modal-image').alt=p.title;document.getElementById('modal-title').textContent=p.title;document.getElementById('modal-description').textContent=p.description;modal.hidden=false;document.body.style.overflow='hidden';});
 function closeModal(){modal.hidden=true;document.body.style.overflow='';}modal.addEventListener('click',e=>{if(e.target.closest('[data-close]'))closeModal();});document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal();});
 const menuToggle=document.querySelector('.menu-toggle'),navLinks=document.querySelector('.nav-links');menuToggle.addEventListener('click',()=>{const open=navLinks.classList.toggle('open');menuToggle.setAttribute('aria-expanded',String(open));menuToggle.setAttribute('aria-label',open?'Menüyü kapat':'Menüyü aç');});navLinks.addEventListener('click',e=>{if(e.target.closest('a')){navLinks.classList.remove('open');menuToggle.setAttribute('aria-expanded','false');}});document.getElementById('year').textContent=new Date().getFullYear();
+
+const founderPhoto = document.getElementById('founder-photo');
+function showFounderPhoto() {
+  if (founderPhoto.naturalWidth > 0) founderPhoto.hidden = false;
+}
+founderPhoto.addEventListener('load', showFounderPhoto);
+showFounderPhoto();
