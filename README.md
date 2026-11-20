@@ -26,9 +26,11 @@ $env:PORT=8080; npm start
 ```
 
 ## Görseller
-`assets/images/` klasörüne `logo.png`, `hero-1.jpg` ... `hero-3.jpg`, `proje-1.jpg` ... `proje-6.jpg` ekleyin. Görselleri eklemezseniz sitenin görsel alanları boş/yer tutucu görünebilir.
+Logo ve hero görselleri `assets/images/` klasöründe bulunur.
 
-İletişim bilgilerini `index.html`, proje isimlerini ve görsel yollarını `script.js` dosyasından düzenleyin.
+Proje kartı eklemek için aynı klasöre `proje-4.jpeg` veya `proje-yeni-kurulum.webp` gibi `proje-` ile başlayan bir görsel koyun. Node.js sunucusu kartları otomatik listeler. Özel proje başlığı ve açıklaması için `script.js` içindeki `projectDetails` alanını kullanabilirsiniz. Docker'da yeni dosyaların yayına çıkması için imajı yeniden derleyin.
+
+İletişim bilgilerini `index.html` dosyasından düzenleyin.
 
 ## Not
 Bu sürüm statik bir Node.js HTTP sunucusudur; veritabanı veya yönetim paneli içermez.

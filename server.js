@@ -5,6 +5,8 @@ const path = require('node:path');
 const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
 const mime = { '.json': 'application/json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.gif': 'image/gif' };
+const imageDirectory = path.join(root, 'assets/images');
+const imageName = /^[\p{L}\p{N}_ .-]+\.(png|jpe?g|webp|svg|ico|gif)$/iu;
 const allowed = new Set(['/','/index.html','/style.css','/script.js']);
 const server = http.createServer((req, res) => {
   if (req.method !== 'GET' && req.method !== 'HEAD') { res.writeHead(405); return res.end('Method Not Allowed'); }
@@ -15,8 +17,24 @@ const server = http.createServer((req, res) => {
     res.writeHead(200, { 'Content-Type': mime['.json'] });
     return res.end(req.method === 'HEAD' ? undefined : '{"status":"ok"}');
   }
+  if (urlPath === '/api/projects') {
+    return fs.readdir(imageDirectory, { withFileTypes: true }, (err, entries) => {
+      const headers = { 'Content-Type': mime['.json'], 'Cache-Control': 'no-store' };
+      if (err) {
+        res.writeHead(500, headers);
+        return res.end(req.method === 'HEAD' ? undefined : '{"error":"Project images unavailable"}');
+      }
+      const names = entries.filter(entry => entry.isFile() && /^proje-.+/i.test(entry.name) && imageName.test(entry.name))
+        .map(entry => entry.name)
+        .sort((left, right) => left.localeCompare(right, 'tr', { numeric: true }));
+      res.writeHead(200, headers);
+      return res.end(req.method === 'HEAD' ? undefined : JSON.stringify(names));
+    });
+  }
   if (urlPath === '/') urlPath = '/index.html';
-  if (!allowed.has(urlPath) && !/^\/assets\/images\/[\w.-]+\.(png|jpe?g|webp|svg|ico|gif)$/i.test(urlPath)) { res.writeHead(404); return res.end('Not Found'); }
+  const imagePrefix = '/assets/images/';
+  const isImage = urlPath.startsWith(imagePrefix) && imageName.test(urlPath.slice(imagePrefix.length));
+  if (!allowed.has(urlPath) && !isImage) { res.writeHead(404); return res.end('Not Found'); }
   const filename = path.resolve(root, '.' + urlPath);
   if (!filename.startsWith(root + path.sep)) { res.writeHead(403); return res.end('Forbidden'); }
   fs.stat(filename, (err, stats) => {
