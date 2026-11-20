@@ -4,7 +4,10 @@ const fs = require('node:fs');
 const path = require('node:path');
 const root = __dirname;
 const port = Number(process.env.PORT) || 3000;
-const mime = { '.pdf': 'application/pdf', '.webmanifest': 'application/manifest+json; charset=utf-8', '.json': 'application/json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.gif': 'image/gif' };
+const mime = {
+  '.pdf': 'application/pdf', '.webmanifest': 'application/manifest+json; charset=utf-8', '.txt': 'text/plain; charset=utf-8',
+  '.xml': 'application/xml; charset=utf-8', '.json': 'application/json; charset=utf-8', '.html': 'text/html; charset=utf-8', '.css': 'text/css; charset=utf-8', '.js': 'text/javascript; charset=utf-8', '.png': 'image/png', '.jpg': 'image/jpeg', '.jpeg': 'image/jpeg', '.webp': 'image/webp', '.svg': 'image/svg+xml', '.ico': 'image/x-icon', '.gif': 'image/gif'
+};
 const imageDirectory = path.join(root, 'assets/images');
 const imageName = /^[\p{L}\p{N}_ .-]+\.(png|jpe?g|webp|svg|ico|gif)$/iu;
 const allowed = new Set([
@@ -13,6 +16,8 @@ const allowed = new Set([
   '/style.css',
   '/script.js',
   '/site.webmanifest',
+  '/robots.txt',
+  '/sitemap.xml',
   '/assets/referanslar.json'
 ]);
 const catalogueRoute = '/referans-katalogu.pdf';
