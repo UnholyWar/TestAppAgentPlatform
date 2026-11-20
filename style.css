@@ -66,3 +66,282 @@
   .about-panel { grid-template-columns: minmax(0, 1fr); }
   .founder-profile { flex-direction: row; justify-content: flex-start; align-items: center; }
 }
+
+/* ===== KURUMSAL & KURUCU ===== */
+
+.founder-showcase {
+  --founder-accent: #217fae;
+  --founder-ink: #172d3e;
+
+  display: grid;
+  grid-template-columns: minmax(0, 1.12fr) minmax(0, .88fr);
+  align-items: center;
+  gap: clamp(35px, 5vw, 90px);
+
+  padding: clamp(32px, 5vw, 76px);
+  margin: 65px 0;
+  border-radius: 22px;
+  border: 1px solid #e7edf1;
+
+  background:
+    linear-gradient(125deg, #f3f7f9 0%, #fff 80%);
+}
+
+/* Sol içerik */
+
+.founder-content {
+  min-width: 0;
+}
+
+.founder-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 25px;
+
+  color: var(--founder-accent);
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2.5px;
+}
+
+.founder-kicker-line {
+  width: 28px;
+  height: 2px;
+  background: var(--founder-accent);
+}
+
+.founder-content h2 {
+  margin: 0 0 28px;
+
+  color: var(--founder-ink);
+  font-size: clamp(32px, 3.5vw, 49px);
+  font-weight: 750;
+  line-height: 1.18;
+  letter-spacing: -1.5px;
+}
+
+.founder-content h2 span {
+  color: var(--founder-accent);
+}
+
+.founder-lead {
+  color: #344b5a;
+  font-size: 17px;
+  font-weight: 500;
+  line-height: 1.85;
+  margin-bottom: 18px;
+}
+
+.founder-description {
+  color: #677782;
+  font-size: 14px;
+  line-height: 1.95;
+  margin-bottom: 30px;
+}
+
+.founder-divider {
+  width: 100%;
+  height: 1px;
+  background: #dfe8ed;
+  margin-bottom: 24px;
+}
+
+.founder-values {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-bottom: 34px;
+}
+
+.founder-values span {
+  padding: 9px 13px;
+  background: #edf4f8;
+  color: #426279;
+  border-radius: 6px;
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.founder-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 20px;
+
+  padding: 15px 21px;
+  border-radius: 7px;
+  background: var(--founder-ink);
+  color: #fff;
+  text-decoration: none;
+  font-size: 13px;
+  font-weight: 700;
+
+  transition: background .2s, transform .2s;
+}
+
+.founder-cta:hover {
+  background: var(--founder-accent);
+  transform: translateY(-2px);
+}
+
+.founder-cta span {
+  font-size: 18px;
+}
+
+/* Sağ portre */
+
+.founder-portrait {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  margin: 0;
+  padding-bottom: 46px;
+  justify-self: end;
+}
+
+.founder-image-container {
+  height: clamp(360px, 37vw, 510px);
+  position: relative;
+  overflow: hidden;
+  border-radius: 13px;
+  background: #dbe5eb;
+}
+
+.founder-image-container img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 18%;
+  transition: transform .6s ease;
+}
+
+.founder-portrait:hover img {
+  transform: scale(1.035);
+}
+
+.founder-image-shade {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to top,
+    rgba(9, 31, 46, .25),
+    transparent 45%
+  );
+  pointer-events: none;
+}
+
+.founder-image-mark {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  font-size: 12px;
+  font-weight: 800;
+  letter-spacing: 2px;
+  color: #fff;
+  text-shadow: 0 1px 10px rgba(0,0,0,.25);
+}
+
+/* İsim kartı */
+
+.founder-identity {
+  position: absolute;
+  left: 20px;
+  right: 20px;
+  bottom: 0;
+
+  display: flex;
+  align-items: stretch;
+  gap: 19px;
+
+  background: #fff;
+  padding: 24px 26px;
+  border-radius: 9px;
+  box-shadow: 0 16px 38px rgba(18, 38, 52, .12);
+}
+
+.founder-identity-accent {
+  width: 3px;
+  flex-shrink: 0;
+  background: var(--founder-accent);
+  border-radius: 3px;
+}
+
+.founder-identity-content span {
+  display: block;
+  margin-bottom: 7px;
+  color: var(--founder-accent);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 1.8px;
+}
+
+.founder-identity-content h3 {
+  margin: 0 0 5px;
+  color: var(--founder-ink);
+  font-size: 23px;
+  line-height: 1.25;
+  font-weight: 750;
+}
+
+.founder-identity-content p {
+  margin: 0;
+  color: #7c8b94;
+  font-size: 12px;
+}
+
+/* Tablet ve mobil */
+
+@media (max-width: 900px) {
+  .founder-showcase {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .founder-portrait {
+    max-width: 440px;
+    justify-self: center;
+  }
+
+  .founder-image-container {
+    height: 470px;
+  }
+}
+
+@media (max-width: 560px) {
+  .founder-showcase {
+    margin: 35px 0;
+    padding: 27px 20px;
+    border-radius: 14px;
+  }
+
+  .founder-content h2 {
+    font-size: 32px;
+    letter-spacing: -.8px;
+  }
+
+  .founder-lead {
+    font-size: 15px;
+  }
+
+  .founder-image-container {
+    height: 380px;
+  }
+
+  .founder-identity {
+    left: 12px;
+    right: 12px;
+    padding: 19px;
+  }
+
+  .founder-identity-content h3 {
+    font-size: 20px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .founder-cta,
+  .founder-image-container img {
+    transition: none;
+  }
+}
