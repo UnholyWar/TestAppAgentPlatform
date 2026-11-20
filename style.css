@@ -53,20 +53,22 @@
   overflow-wrap:anywhere;
   font-weight:750;
 }
-.reference-toggle {
-  margin-top:16px;
-  min-height:44px;
-  padding:8px 16px;
+.btn.reference-download { background:var(--navy); color:#fff; border:1px solid var(--navy); }
+.btn.reference-download:hover,.btn.reference-download:focus-visible { background:var(--deep); border-color:var(--cyan); }
+.reference-controls { display:flex; align-items:center; justify-content:center; gap:14px; margin-top:16px; color:var(--navy); }
+.reference-controls[hidden] { display:none; }
+.reference-controls button {
+  width:44px;
+  height:44px;
   border:1px solid var(--line);
   border-radius:8px;
   background:#fff;
-  color:var(--navy);
-  font:inherit;
-  font-weight:700;
+  color:inherit;
+  font-size:24px;
   cursor:pointer;
 }
-.reference-toggle:hover,.reference-toggle:focus-visible { border-color:var(--blue); }
-@media (max-width: 900px) { .reference-grid { --reference-columns:3; } }
+.reference-controls button:hover,.reference-controls button:focus-visible { border-color:var(--blue); }
+.reference-controls span { font-variant-numeric:tabular-nums; }
 @media (max-width: 560px) { .reference-grid { --reference-columns:2; } }
 
 .about { padding-bottom: clamp(34px, 6vw, 56px); }
